@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RequestMapper } from 'src/app/request-mapper';
 import { ServiceService } from 'src/app/services/service.service';
 import { VariableConstants } from 'src/app/varibale-constants';
@@ -11,7 +12,7 @@ import { VariableConstants } from 'src/app/varibale-constants';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
-  constructor(private userData: ServiceService) {}
+  constructor(private userData: ServiceService, private router: Router) {}
 
   form = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
@@ -53,8 +54,11 @@ export class SigninComponent implements OnInit {
         VariableConstants.ACCESS_PRIVATE
       )
       .subscribe((result: any) => {
-        console.log(result.body.token);
-        localStorage.setItem('token', result.body.token);
+        console.log(result.status);
+        if (result.status == 200) {
+          localStorage.setItem('token', result.body.token);
+          this.router.navigate(['/dashboard']);
+        }
       });
   }
 }

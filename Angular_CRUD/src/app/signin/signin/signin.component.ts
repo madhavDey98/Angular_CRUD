@@ -53,12 +53,17 @@ export class SigninComponent implements OnInit {
         RequestMapper.API_LOGIN,
         VariableConstants.ACCESS_PRIVATE
       )
-      .subscribe((result: any) => {
-        console.log(result.status);
-        if (result.status == 200) {
-          localStorage.setItem('token', result.body.token);
-          this.router.navigate(['/dashboard']);
-        }
+      .subscribe({
+        next: (result) => {
+          console.log(result.status);
+          if (result.status == 200) {
+            localStorage.setItem('token', result.body.token);
+            this.router.navigate(['/dashboard']);
+          }
+        },
+        error: (err) => {
+          console.log(err.error.error);
+        },
       });
   }
 }

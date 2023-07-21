@@ -6,15 +6,24 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AddEditComponent } from './add-edit/add-edit.component';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, AddEditComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatDialogModule,
   ],
 })
 export class DashboardModule {}

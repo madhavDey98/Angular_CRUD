@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "fname": "Madhavendra",
+      "lname": "Dey",
+      "email": "madhavendradey69@gmail.com",
+      "pnum": "9040292118",
+      "id": 3
+    },
+    {
+      "fname": "Surat",
+      "lname": "Sahoo",
+      "email": "suratSahoo@gmail.com",
+      "pnum": "45638765",
+      "id": 4
+    },
+    {
+      "fname": "Person1",
+      "lname": "Patra",
+      "email": "person@som.com",
+      "pnum": "4567876546",
+      "id": 5
+    }
+  ]
+}

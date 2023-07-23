@@ -58,4 +58,31 @@ export class ServiceService {
 
     return response;
   }
+  public callApiData(
+    data: object,
+    method: string,
+    url: string,
+    type: string
+  ): Observable<any> {
+    var response;
+
+    if (method == VariableConstants.METHOD_GET) {
+      response = this.http.get(RequestMapper.BASE_API_DATA_URL + url, {});
+    } else if (method == VariableConstants.METHOD_POST) {
+      response = this.http.post(RequestMapper.BASE_API_DATA_URL + url, data, {
+        observe: 'response',
+      });
+    } else if (method == VariableConstants.METHOD_PUT) {
+      response = this.http.put(RequestMapper.BASE_API_DATA_URL + url, data, {
+        observe: 'response',
+      });
+    } else {
+      response = this.http.delete(RequestMapper.BASE_API_DATA_URL + url + data);
+    }
+
+    return response;
+  }
+  deleteEmployee(id: number): Observable<any> {
+    return this.http.delete(` http://localhost:3000/employees/${id}`);
+  }
 }

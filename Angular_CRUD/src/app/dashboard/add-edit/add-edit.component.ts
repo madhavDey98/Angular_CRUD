@@ -1,3 +1,4 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 import {
   AbstractControl,
@@ -5,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { RequestMapper } from 'src/app/request-mapper';
 import { ServiceService } from 'src/app/services/service.service';
 import { VariableConstants } from 'src/app/varibale-constants';
@@ -17,7 +19,10 @@ import { VariableConstants } from 'src/app/varibale-constants';
 export class AddEditComponent {
   value = 'Clear me';
 
-  constructor(private userData: ServiceService) {}
+  constructor(
+    private userData: ServiceService,
+    private _dialogueRef: MatDialogRef<AddEditComponent>
+  ) {}
 
   empData = new FormGroup({
     fname: new FormControl('', [Validators.required]),
@@ -34,22 +39,21 @@ export class AddEditComponent {
     let inpData = this.empData.value;
     console.log(inpData);
     this.userData
-      .callApi(
+      .callApiData(
         inpData,
         VariableConstants.METHOD_POST,
-        RequestMapper.API_CREATE_USER,
+        RequestMapper.API_EMP_LIST,
         VariableConstants.ACCESS_PRIVATE
       )
       .subscribe({
         next: (result) => {
           console.log(result.status);
-          if (result.status == 200) {
-            localStorage.setItem('token', result.body.token);
-            // this.router.navigate(['/dashboard']);
+          if (result.status == 201) {
+            this._dialogueRef.close(true);
           }
         },
         error: (err) => {
-          console.log(err.error.error);
+          console.log(err);
         },
       });
   }

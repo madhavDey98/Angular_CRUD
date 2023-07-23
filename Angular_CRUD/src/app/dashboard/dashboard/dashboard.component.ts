@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  displayedColumns: string[] = ['id', 'first_name', 'last_name', 'email'];
+  displayedColumns: string[] = ['id', 'fname', 'age', 'salary', 'action'];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

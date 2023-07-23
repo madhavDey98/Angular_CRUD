@@ -1,0 +1,22 @@
+.row {
+  display: flex;
+  gap: 15px;
+}
+.content {
+  padding-top: 10px;
+}
+mat-form-field {
+  width: 100%;
+}
+.actions {
+  padding: 0 25px 20px;
+  button {
+    flex: 1;
+  }
+}
+.error {
+  border: 1.5px solid #f20000;
+}
+.text-danger {
+  color: #f20000;
+}

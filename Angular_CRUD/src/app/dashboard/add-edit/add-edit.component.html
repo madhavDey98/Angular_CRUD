@@ -1,1 +1,52 @@
-<p>add-edit works!</p>
+<!-- <p>add-edit works!</p> -->
+<div mat-dialog-title>
+  <h1>Employee Form</h1>
+</div>
+<form [formGroup]="empData" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field class="example-form-field">
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="fname"
+          placeholder="Ex.Maddy"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Last Name</mat-label>
+        <input
+          matInput
+          formControlName="lname"
+          type="text"
+          placeholder="Ex.Dey"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="example-form-field">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="Ex.some@gmail.com"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <mat-label>Phone Number</mat-label>
+        <input
+          matInput
+          formControlName="pnum"
+          type="tel"
+          placeholder="Ex.7656767889"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="actions">
+    <button mat-raised-button type="button">Cancel</button>
+    <button mat-raised-button color="primary">Save</button>
+  </div>
+</form>

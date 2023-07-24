@@ -33,6 +33,20 @@
           type="email"
           placeholder="Ex.some@gmail.com"
         />
+        <div
+          *ngIf="getControl('email')?.errors && getControl('email')?.touched"
+        >
+          <small
+            class="text-danger"
+            *ngIf="getControl('email')?.errors?.['required']"
+            >Email is required</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="getControl('email')?.errors?.['email']"
+            >Please Enter correct email</small
+          >
+        </div>
       </mat-form-field>
       <mat-form-field class="example-form-field">
         <mat-label>Phone Number</mat-label>
@@ -42,6 +56,23 @@
           type="tel"
           placeholder="Ex.7656767889"
         />
+        <div *ngIf="getControl('pnum')?.errors && getControl('pnum')?.touched">
+          <small
+            class="text-danger"
+            *ngIf="getControl('pnum')?.errors?.['required']"
+            >First Name is required</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="getControl('pnum')?.errors?.['maxlength']"
+            >Number too big</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="getControl('pnum')?.errors?.['minlength']"
+            >Number too small</small
+          >
+        </div>
       </mat-form-field>
     </div>
   </div>
@@ -49,6 +80,8 @@
     <button mat-raised-button type="button" [mat-dialog-close]="false">
       Cancel
     </button>
-    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="primary">
+      {{ data ? "Update" : "save" }}
+    </button>
   </div>
 </form>

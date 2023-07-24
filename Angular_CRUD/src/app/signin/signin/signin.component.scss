@@ -8,7 +8,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  padding-top: 2rem;
 }
 
 h1 {
@@ -245,4 +245,11 @@ footer i {
 footer a {
   color: #3c97bf;
   text-decoration: none;
+}
+
+.error {
+  border: 1.5px solid rgb(239, 90, 90);
+}
+.text-danger {
+  color: rgb(239, 90, 90);
 }

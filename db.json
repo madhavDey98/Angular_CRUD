@@ -32,11 +32,32 @@
       "id": 4
     },
     {
-      "fname": "Person1",
-      "lname": "Patra",
-      "email": "person@som.com",
-      "pnum": "4567876546",
+      "fname": "Ronny",
+      "lname": "prasad",
+      "email": "ronny345@gmail.com",
+      "pnum": "6574857889",
       "id": 5
+    },
+    {
+      "fname": "Barnali",
+      "lname": "dey",
+      "email": "deyBarna368@gmail.com",
+      "pnum": "7654567589",
+      "id": 6
+    },
+    {
+      "fname": "Satya",
+      "lname": "das",
+      "email": "satya@gmail.com",
+      "pnum": "6574657664",
+      "id": 7
+    },
+    {
+      "fname": "Manisha",
+      "lname": "Nag",
+      "email": "manisha345@gmail.com",
+      "pnum": "6578475686",
+      "id": 8
     }
   ]
 }

@@ -19,6 +19,7 @@ export class RequestMapper {
   public static readonly BASE_API_URL: string = 'https://reqres.in/api/';
   public static readonly BASE_API_DATA_URL: string = ' http://localhost:3000/';
   public static readonly API_LOGIN: string = 'login';
+  public static readonly API_REGISTER: string = 'register';
   public static readonly API_CREATE_USER: string = 'users';
   public static readonly API_USER_LIST: string = 'users?page=2';
   public static readonly API_EMP_LIST: string = 'employees';

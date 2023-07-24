@@ -1,7 +1,7 @@
 <div class="container_outer">
   <div class="container" id="container">
     <div class="form-container sign-up-container">
-      <form action="#">
+      <form [formGroup]="formSignup" (ngSubmit)="onSignup()">
         <h1>Create Account</h1>
         <div class="social-container">
           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -9,14 +9,39 @@
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <span>or use your email for registration</span>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+        <input type="text" placeholder="Name" formControlName="name" />
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          [ngClass]="{
+            error: getControl('email')?.errors && getControl('email')?.touched
+          }"
+        />
+        <div
+          *ngIf="getControl('email')?.errors && getControl('email')?.touched"
+        >
+          <small
+            class="text-danger"
+            *ngIf="getControl('email')?.errors?.['required']"
+            >Email is required</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="getControl('email')?.errors?.['email']"
+            >Email is not correct</small
+          >
+        </div>
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
         <button>Sign Up</button>
       </form>
     </div>
     <div class="form-container sign-in-container">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
         <h1>Sign in</h1>
         <div class="social-container">
           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -24,12 +49,54 @@
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <span>or use your account</span>
-        <input type="email" placeholder="Email" formControlName="email" />
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          [ngClass]="{
+            error:
+              getControlLog('email')?.errors && getControlLog('email')?.touched
+          }"
+        />
+        <div
+          *ngIf="
+            getControlLog('email')?.errors && getControlLog('email')?.touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="getControlLog('email')?.errors?.['required']"
+            >Email is required</small
+          >
+          <small
+            class="text-danger"
+            *ngIf="getControlLog('email')?.errors?.['email']"
+            >Email is not correct</small
+          >
+        </div>
+
         <input
           type="password"
           placeholder="Password"
           formControlName="password"
+          [ngClass]="{
+            error:
+              getControlLog('password')?.errors &&
+              getControlLog('password')?.touched
+          }"
         />
+        <div
+          *ngIf="
+            getControlLog('password')?.errors &&
+            getControlLog('password')?.touched
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="getControlLog('password')?.errors?.['required']"
+            >password is required</small
+          >
+        </div>
         <a href="#">Forgot your password?</a>
         <button>Sign In</button>
       </form>
@@ -44,7 +111,7 @@
         <div class="overlay-panel overlay-right">
           <h1>Hello, Friend!</h1>
           <p>Enter your personal details and start journey with us</p>
-          <button (click)="rightBg()" class="ghost" id="signUp">Sign Up</button>
+          <button class="ghost" id="signUp">Sign Up</button>
         </div>
       </div>
     </div>

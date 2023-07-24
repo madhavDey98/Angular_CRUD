@@ -2,14 +2,24 @@
   <mat-toolbar color="primary">
     <span>Crud</span>
     <span class="example-spacer"></span>
-    <button
-      mat-raised-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
-      (click)="onAddEmployee()"
-    >
-      Add Employee
-    </button>
+    <div class="btnGrp">
+      <button
+        mat-raised-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        (click)="onAddEmployee()"
+      >
+        Add Employee
+      </button>
+      <button
+        mat-raised-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        (click)="logOut()"
+      >
+        Logout
+      </button>
+    </div>
   </mat-toolbar>
 </div>
 <div class="table_list">
@@ -51,7 +61,7 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>Actions</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button color="primary">
+        <button mat-icon-button color="primary" (click)="openEditForm(element)">
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button color="warn" (click)="deleteEmp(element.id)">

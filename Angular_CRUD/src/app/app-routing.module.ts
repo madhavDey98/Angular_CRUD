@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SigninComponent } from './signin/signin/signin.component';
+import { authGuard } from './guard/auth.guard';
+import { RequestMapper } from './request-mapper';
 
 const routes: Routes = [
   {
@@ -9,9 +11,15 @@ const routes: Routes = [
       import('./signin/signin.module').then((m) => m.SigninModule),
   },
   {
-    path: 'dashboard',
+    path: RequestMapper.DASHBOARD_,
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./not-found/not-found.module').then((m) => m.NotFoundModule),
   },
 ];
 

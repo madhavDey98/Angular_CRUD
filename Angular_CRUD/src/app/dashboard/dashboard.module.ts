@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderModule } from '../header/header.module';
 
 @NgModule({
   declarations: [DashboardComponent, AddEditComponent],
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    HeaderModule,
   ],
 })
 export class DashboardModule {}

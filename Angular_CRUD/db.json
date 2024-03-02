@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "fname": "Madhavendra",
+      "lname": "Dey",
+      "email": "madhavendradey69@gmail.com",
+      "pnum": "9040292118",
+      "id": 3
+    },
+    {
+      "fname": "Ronny",
+      "lname": "prasad",
+      "email": "ronny345@gmail.com",
+      "pnum": "6574857889",
+      "id": 5
+    },
+    {
+      "fname": "Barnali",
+      "lname": "dey",
+      "email": "deyBarna368@gmail.com",
+      "pnum": "7654567589",
+      "id": 6
+    },
+    {
+      "fname": "Satya",
+      "lname": "das",
+      "email": "satya@gmail.com",
+      "pnum": "6574657664",
+      "id": 7
+    },
+    {
+      "fname": "Manisha",
+      "lname": "Nag",
+      "email": "manisha345@gmail.com",
+      "pnum": "6578475686",
+      "id": 8
+    },
+    {
+      "fname": "Mrinal",
+      "lname": "Dey",
+      "email": "something@gmail.com",
+      "pnum": "6765678789",
+      "id": 9
+    },
+    {
+      "fname": "New",
+      "lname": "change",
+      "email": "c@g.com",
+      "pnum": "8765678987",
+      "id": 10
+    }
+  ]
+}
